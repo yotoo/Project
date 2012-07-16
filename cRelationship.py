@@ -131,7 +131,7 @@ class Relationship():
 		p = Preprocess()
 
 		cachePath = '/home/yotoo/Project/comparison/'
-		plotPath   = '/home/yotoo/Project/log_plot/'
+		plotPath   = '/home/yotoo/Project/logPlot/'
 		# details about the data
 		maximum = degreeList[len(degreeList)-1]
 		dist = {}

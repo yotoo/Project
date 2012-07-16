@@ -142,16 +142,25 @@ class Preprocess():
 			print set(errorList)
 			return cleandata
 
-	def createRandomData(self, cleanData, dataSize):
-		randomData = []
 
-		indexRange = range(0,dataSize)
-		randomIndex = random.sample(indexRange,dataSize)
+	def getSubset(self,CleanData,SetSize,Flag):
 
-		for index in randomIndex:
-			randomData.append(cleanData[index])
+		if (Flag == 'Random'):
+			randomData = []
+			indexRange = range(0,SetSize)
+			randomIndex = random.sample(indexRange,SetSize)
 
-		return randomData
+			for index in randomIndex:
+				randomData.append(CleanData[index])
+
+			return randomData
+
+		elif(Flag == ''):
+			pass
+
+			# TODO: create different type of subset for comparison
+
+
 
 
 

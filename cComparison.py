@@ -22,16 +22,23 @@ class Comparison():
 		pass
 
 
-	def linearRegression(self,data):
-		savePath = '/home/yotoo/Project/comparison'
+	def linearRegression(self,Data,Flag):
+		savePath = '/home/yotoo/Project/comparison/'
 		# plot original data
 		title = 'test data'
+		if (Flag == '19 + Ranked'):
+			title = 'Linear Regression Result(Border size: 19; Game Type: Ranked)'
+		elif (Flag == '19 + Free'):
+			title = 'Linear Regression Result(Border size: 19; Game Type: Free)'
+		elif (Flag == '9 + Free'):
+			title = 'Linear Regression Result(Border size: 9; Game Type: Free)'
+
 		degreeArray = []
 		playerArray = []
 		degreeList = []
 		playerList = []
 
-		for record in data:
+		for record in Data:
 			record = record.split()
 			degree = int(record[0])
 			player = int(record[1])
@@ -55,8 +62,8 @@ class Comparison():
 
 		# plot the original data points
 		plt.grid(True)
-		plt.xlabel('Degree')
-		plt.ylabel('Players')
+		plt.xlabel('Log Degree')
+		plt.ylabel('Log Players')
 		plt.title(title)
 		plt.plot(degreeArray,playerArray,'bo')
 
